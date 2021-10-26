@@ -83,7 +83,7 @@
         font-family: 'Sarabun', sans-serif !important;
       }
       
-      .form-control{
+      .form-control, .invalid-feedback{
         font-family: 'Sarabun', sans-serif !important;
       }
 
@@ -143,15 +143,17 @@
           <mark>คำชี้แจง</mark> โปรดทำเครื่องหมาย ลงในช่องที่ตรงตามข้อมูลเบื้องต้นของผู้ตอบแบบสอบถาม
         </p>
 
+        <form class="needs-validation" novalidate>
         <div class="col-md-4">
           <label for="sex" class="form-label">1. เพศ</label>
           <select class="form-select" id="sex" required>
+            <option selected disabled value="">...</option>
             <option value="1">ชาย</option>
             <option value="2">หญิง</option>
             <option value="3">กลุ่มบุคคลที่มีความหลากหลายทางเพศ</option>
           </select>
           <div class="invalid-feedback">
-            โปรดระบุเพศให้ถูกต้อง
+            โปรดระบุเพศ
           </div>
         </div>
         
@@ -159,6 +161,7 @@
         <div class="col-md-4">
           <label for="mymaritalstatus" class="form-label">2. สถานภาพสมรสของตนเอง</label>
           <select class="form-select" id="mymaritalstatus" required>
+            <option selected disabled value="">...</option>
             <option value="1">โสด</option>
             <option value="2">สมรส อยู่ด้วยกัน</option>
             <option value="3">สมรส แยกกันอยู่</option>
@@ -166,7 +169,7 @@
             <option value="5">หย่า</option>
           </select>
           <div class="invalid-feedback">
-            โปรดระบุสถานภาพให้ถูกต้อง
+            โปรดระบุสถานภาพ
           </div>
         </div>
 
@@ -174,6 +177,7 @@
       <div class="col-md-4">
         <label for="gpa" class="form-label">3. เกรดเฉลี่ยสะสม</label>
         <select class="form-select" id="gpa" required>
+          <option selected disabled value="">...</option>
           <option value="1">ยังไม่มีเกรดเฉลี่ยสะสม</option>
           <option value="2">น้อยกว่า 2.00</option>
           <option value="3">2.00 ถึง 2.49</option>
@@ -182,7 +186,7 @@
           <option value="6">3.50 ถึง 4.00</option>
         </select>
         <div class="invalid-feedback">
-          โปรดระบุเกรดเฉลี่ยให้ถูกต้อง
+          โปรดระบุเกรดเฉลี่ย
         </div>
       </div>
 
@@ -212,13 +216,14 @@
     <div class="col-md-4">
       <label for="numberofsiblings" class="form-label">5. จำนวนพี่น้อง (นับรวมตนเอง)</label>
       <select class="form-select" id="numberofsiblings" required>
+        <option selected disabled value="">...</option>
         <option value="1">1 คน</option>
         <option value="2">2 คน</option>
         <option value="3">3 คน</option>
         <option value="4">มากกว่า 3 คน</option>
       </select>
       <div class="invalid-feedback">
-        โปรดระบุจำนวนพี่น้องให้ถูกต้อง
+        โปรดระบุจำนวนพี่น้อง
       </div>
     </div>
 
@@ -226,6 +231,7 @@
     <div class="col-md-4">
       <label for="babysitter" class="form-label">6. บุคคลที่เลี้ยงดู</label>
       <select class="form-select" id="babysitter" required>
+        <option selected disabled value="">...</option>
         <option value="1">บิดามารดา</option>
         <option value="2">บิดาเพียงผู้เดียว</option>
         <option value="3">มารดาเพียงผู้เดียว</option>
@@ -233,7 +239,7 @@
         <option value="5">บุคคลนอกสายเลือด</option>
       </select>
       <div class="invalid-feedback">
-        โปรดระบุบุคคลที่เลี้ยงดูให้ถูกต้อง
+        โปรดระบุบุคคลที่เลี้ยงดู
       </div>
     </div>
 
@@ -241,6 +247,7 @@
     <div class="col-md-4">
       <label for="parentingtype" class="form-label">7. รูปแบบการเลี้ยงดู</label> <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#Readmore">ข้อมูล</button>
       <select class="form-select" id="parentingtype" required>
+        <option selected disabled value="">...</option>
         <option value="1">รักสนับสนุน</option>
         <option value="2">เข้มงวด</option>
         <option value="3">ปล่อยปละละเลย</option>
@@ -255,7 +262,7 @@
 
 
       <hr class="my-4">
-      <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+      <button class="w-100 btn btn-primary btn-lg" type="submit">หน้าถัดไป ></button>
 
 
       </div>
@@ -292,6 +299,33 @@
               </div>
             </div>
     <!-- Modal -->
+
+  </form>
+
+
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+
+    </script>
 
   </body>
 
