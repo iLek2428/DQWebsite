@@ -30,7 +30,7 @@
         user-select: none;
       }
 
-      .fs-4{
+      .fs-4, label{
         font-family: 'Sarabun', sans-serif !important;
         color: white !important;
       }
@@ -145,8 +145,8 @@
 
         <form class="needs-validation" novalidate>
         <div class="col-md-4">
-          <label for="sex" class="form-label">1. เพศ</label>
-          <select class="form-select" id="sex" required>
+          <label for="question-1" class="form-label">1. เพศ</label>
+          <select class="form-select" id="question-1" required>
             <option selected disabled value="">...</option>
             <option value="1">ชาย</option>
             <option value="2">หญิง</option>
@@ -159,8 +159,8 @@
         
       </br>
         <div class="col-md-4">
-          <label for="mymaritalstatus" class="form-label">2. สถานภาพสมรสของตนเอง</label>
-          <select class="form-select" id="mymaritalstatus" required>
+          <label for="question-2" class="form-label">2. สถานภาพสมรสของตนเอง</label>
+          <select class="form-select" id="question-2" required>
             <option selected disabled value="">...</option>
             <option value="1">โสด</option>
             <option value="2">สมรส อยู่ด้วยกัน</option>
@@ -175,8 +175,8 @@
 
       </br>
       <div class="col-md-4">
-        <label for="gpa" class="form-label">3. เกรดเฉลี่ยสะสม</label>
-        <select class="form-select" id="gpa" required>
+        <label for="question-3" class="form-label">3. เกรดเฉลี่ยสะสม</label>
+        <select class="form-select" id="question-3" required>
           <option selected disabled value="">...</option>
           <option value="1">ยังไม่มีเกรดเฉลี่ยสะสม</option>
           <option value="2">น้อยกว่า 2.00</option>
@@ -191,31 +191,34 @@
       </div>
 
       </br>
-      <div class="col-md-5">
-      <label for="faculty" class="form-label">4. คณะ/วิทยาลัย</label>
-      <input class="form-control" list="datalistOptions" id="faculty" placeholder="โปรดพิมพ์ชื่อคณะ/วิทยาลัย...">
-      <datalist id="datalistOptions">
-        <option value="คณะวิศวกรรมศาสตร์">
-        <option value="คณะสถาปัตยกรรมศิลปะและการออกแบบ">
-        <option value="คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี">
-        <option value="คณะวิทยาศาสตร์">
-        <option value="คณะเทคโนโลยีการเกษตร">
-        <option value="คณะเทคโนโลยีสารสนเทศ">
-        <option value="คณะอุตสาหกรรมอาหาร">
-        <option value="วิทยาลัยเทคโนโลยีและนวัตกรรมวัสดุ">
-        <option value="วิทยาลัยนวัตกรรมการผลิตขั้นสูง">
-        <option value="คณะบริหารธุรกิจ">
-        <option value="คณะแพทยศาสตร์">
-        <option value="วิทยาลัยอุตสาหกรรมการบินนานาชาติ">
-        <option value="คณะศิลปศาสตร์">
-        <option value="วิทยาลัยวิศวกรรมสังคีต">
-      </datalist>
+      <div class="col-md-4">
+        <label for="question-4" class="form-label">4. คณะ/วิทยาลัย</label>
+        <select class="form-select" id="question-4" required>
+          <option selected disabled value="">...</option>
+          <option value="1">คณะวิศวกรรมศาสตร์</option>
+          <option value="2">คณะสถาปัตยกรรมศิลปะและการออกแบบ</option>
+          <option value="3">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</option>
+          <option value="4">คณะวิทยาศาสตร์</option>
+          <option value="5">คณะเทคโนโลยีการเกษตร</option>
+          <option value="6">คณะเทคโนโลยีสารสนเทศ</option>
+          <option value="7">คณะอุตสาหกรรมอาหาร</option>
+          <option value="8">วิทยาลัยเทคโนโลยีและนวัตกรรมวัสดุ</option>
+          <option value="9">วิทยาลัยนวัตกรรมการผลิตขั้นสูง</option>
+          <option value="10">คณะบริหารธุรกิจ</option>
+          <option value="11">คณะแพทยศาสตร์</option>
+          <option value="12">วิทยาลัยอุตสาหกรรมการบินนานาชาติ</option>
+          <option value="13">คณะศิลปศาสตร์</option>
+          <option value="14">วิทยาลัยวิศวกรรมสังคีต</option>
+        </select>
+        <div class="invalid-feedback">
+          โปรดระบุคณะ/วิทยาลัย
+        </div>
       </div>
 
     </br>
     <div class="col-md-4">
-      <label for="numberofsiblings" class="form-label">5. จำนวนพี่น้อง (นับรวมตนเอง)</label>
-      <select class="form-select" id="numberofsiblings" required>
+      <label for="question-5" class="form-label">5. จำนวนพี่น้อง (นับรวมตนเอง)</label>
+      <select class="form-select" id="question-5" required>
         <option selected disabled value="">...</option>
         <option value="1">1 คน</option>
         <option value="2">2 คน</option>
@@ -229,8 +232,8 @@
 
     </br>
     <div class="col-md-4">
-      <label for="babysitter" class="form-label">6. บุคคลที่เลี้ยงดู</label>
-      <select class="form-select" id="babysitter" required>
+      <label for="question-6" class="form-label">6. บุคคลที่เลี้ยงดู</label>
+      <select class="form-select" id="question-6" required>
         <option selected disabled value="">...</option>
         <option value="1">บิดามารดา</option>
         <option value="2">บิดาเพียงผู้เดียว</option>
@@ -245,8 +248,8 @@
 
     </br>
     <div class="col-md-4">
-      <label for="parentingtype" class="form-label">7. รูปแบบการเลี้ยงดู</label> <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#Readmore">ข้อมูล</button>
-      <select class="form-select" id="parentingtype" required>
+      <label for="question-7" class="form-label">7. รูปแบบการเลี้ยงดู</label> <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#Readmore">ข้อมูล</button>
+      <select class="form-select" id="question-7" required>
         <option selected disabled value="">...</option>
         <option value="1">รักสนับสนุน</option>
         <option value="2">เข้มงวด</option>
@@ -255,10 +258,110 @@
         <option value="5">ใช้เหตุผล</option>
       </select>
       <div class="invalid-feedback">
-        โปรดระบุบุคคลที่เลี้ยงดูให้ถูกต้อง
+        โปรดระบุรูปแบบการเลี้ยงดู
       </div>
     </div>
 
+    </br>
+    <div class="col-md-4">
+      <label for="question-8" class="form-label">8. ภูมิลำเนา</label>
+      <select class="form-select" id="question-8" required>
+        <option selected disabled value="">...</option>
+        <option value="1">ภาคกลาง</option>
+        <option value="2">ภาคเหนือ</option>
+        <option value="3">ภาคใต้</option>
+        <option value="4">ภาคตะวันตก</option>
+        <option value="5">ภาคตะวันออก</option>
+        <option value="6">ภาคตะวันออกเฉียงเหนือ</option>
+      </select>
+      <div class="invalid-feedback">
+        โปรดระบุภูมิลำเนา
+      </div>
+    </div>
+
+    </br>
+    <div class="col-md-4">
+      <label for="question-9" class="form-label">9. สถานภาพสมรสของบิดามารดา</label>
+      <select class="form-select" id="question-9" required>
+        <option selected disabled value="">...</option>
+        <option value="1">สมรส อยู่ด้วยกัน</option>
+        <option value="2">สมรส แยกกันอยู่</option>
+        <option value="3">หม้าย</option>
+        <option value="4">หย่า</option>
+      </select>
+      <div class="invalid-feedback">
+        โปรดระบุสถานภาพสมรสของบิดามารดา
+      </div>
+    </div>
+
+    </br>
+    <div class="col-md-4">
+      <label for="question-10" class="form-label">10. รายรับเฉลี่ยต่อเดือนที่ได้รับจากผู้ปกครอง</label>
+      <select class="form-select" id="question-10" required>
+        <option selected disabled value="">...</option>
+        <option value="1">ต่ำกว่า 2,000 บาท</option>
+        <option value="2">2,000 ถึง 3,999 บาท</option>
+        <option value="3">4,000 ถึง 6,999 บาท</option>
+        <option value="4">7,000 ถึง 9,999 บาท</option>
+        <option value="5">มากกว่า 9,999 บาท</option>
+      </select>
+      <div class="invalid-feedback">
+        โปรดระบุรายรับเฉลี่ยต่อเดือนที่ได้รับจากผู้ปกครอง
+      </div>
+    </div>
+
+
+    </br>
+    <p>----------------</p>
+
+    <p>ส่วนที่ 2 องค์ประกอบของความฉลาดทางดิจิทัล</br>
+      <mark>คำชี้แจง</mark> โปรดทำเครื่องหมาย ลงในช่องที่ตรงตามข้อมูลเบื้องต้นของผู้ตอบแบบสอบถาม ตามเกณฑ์และความหมายดังนี้
+      <p>ระดับ 5 หมายถึง เห็นด้วยอย่างยิ่ง </br>
+         ระดับ 4 หมายถึง เห็นด้วย </br>
+         ระดับ 3 หมายถึง ไม่แน่ใจ </br>
+         ระดับ 2 หมายถึง ไม่เห็นด้วย </br>
+         ระดับ 1 หมายถึง ไม่เห็นด้วยอย่างยิ่ง </p>
+    </p>
+
+  <section class="border p-3">
+    <h1 class="display-5 fw-bold">1. การแสดงตัวตนบนโลกดิจิทัล</h1>
+    </br>
+    
+    <p>1.1 ทุกครั้งที่ท่านสร้างโปรไฟล์ท่านจะใช้ชื่อจริง</p>
+    
+    <div class="btn-group" role="group" aria-label="question-11">
+      <input type="radio" class="btn-check" name="question-11" id="question-11-5" value="5" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-11-5">เห็นด้วยอย่างยิ่ง</label>
+      <input type="radio" class="btn-check" name="question-11" id="question-11-4" value="4" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-11-4">เห็นด้วย</label>
+      <input type="radio" class="btn-check" name="question-11" id="question-11-3" value="3" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-11-3">ไม่แน่ใจ</label>
+      <input type="radio" class="btn-check" name="question-11" id="question-11-2" value="2" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-11-2">ไม่เห็นด้วย</label>
+      <input type="radio" class="btn-check" name="question-11" id="question-11-1" value="1" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-11-1">ไม่เห็นด้วยอย่างยิ่ง</label>
+      <div class="invalid-feedback">โปรดระบุข้อมูลในช่องนี้</div>
+    </div>
+
+    </br>
+    </br>
+    <p>1.2 ทุกครั้งที่ท่านตั้งรูปโปรไฟล์ ท่านจะใช้รูปภาพของตนเอง</p>
+    
+    <div class="btn-group" role="group" aria-label="question-12">
+      <input type="radio" class="btn-check" name="question-12" id="question-12-5" value="5" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-12-5">เห็นด้วยอย่างยิ่ง</label>
+      <input type="radio" class="btn-check" name="question-12" id="question-12-4" value="4" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-12-4">เห็นด้วย</label>
+      <input type="radio" class="btn-check" name="question-12" id="question-12-3" value="3" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-12-3">ไม่แน่ใจ</label>
+      <input type="radio" class="btn-check" name="question-12" id="question-12-2" value="2" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-12-2">ไม่เห็นด้วย</label>
+      <input type="radio" class="btn-check" name="question-12" id="question-12-1" value="1" autocomplete="off" required>
+        <label class="btn btn-outline-primary" for="question-12-1">ไม่เห็นด้วยอย่างยิ่ง</label>
+      <div class="invalid-feedback">โปรดระบุข้อมูลในช่องนี้</div>
+    </div>
+
+  </section>
 
 
       <hr class="my-4">
@@ -270,7 +373,7 @@
 
     
 
-    <!-- Modal -->
+    <!-- Modal รูปแบบการเลี้ยงดู -->
       <div class="modal fade" id="Readmore" tabindex="-1" aria-labelledby="DQreadmoreLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -298,7 +401,7 @@
                 </div>
               </div>
             </div>
-    <!-- Modal -->
+    <!-- Modal รูปแบบการเลี้ยงดู -->
 
   </form>
 
