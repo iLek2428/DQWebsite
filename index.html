@@ -17,8 +17,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -30,9 +33,9 @@
         user-select: none;
       }
 
-      .fs-4{
+      .fs-4, .navbar-brand{
         font-family: 'Sarabun', sans-serif !important;
-        color: white !important;
+        color: black;
       }
 
       .fw-bold, .lead{
@@ -49,7 +52,6 @@
         font-family: 'Sarabun', sans-serif !important;
         font-weight: 500;
         font-size: small;
-        color: white !important;
       }
 
       .h2, h2{
@@ -91,6 +93,70 @@
           font-size: 3.5rem;
         }
       }
+
+      /* Billboard */
+
+      .tick {
+        font-size:1rem; white-space:nowrap; font-family:arial,sans-serif;
+      }
+
+      .tick-flip,.tick-text-inline {
+        font-size:2.5em;
+      }
+
+      .tick-label {
+        margin-top:1em;font-size:1em;
+      }
+
+      .tick-char {
+        width:1.5em;
+      }
+
+      .tick-text-inline {
+        display:inline-block;text-align:center;min-width:1em;
+      }
+
+      .tick-text-inline+.tick-text-inline {
+        margin-left:-.325em;
+      }
+
+      .tick-group {
+        margin:0 .5em;text-align:center;
+      }
+
+      body {
+        background-color: #fff !important; 
+      }
+
+      .tick-text-inline {
+        color: #595d63 !important; 
+      }
+
+      .tick-label {
+        color: #595d63 !important; 
+      }
+
+      .tick-flip-panel {
+        color: #fff !important; 
+      }
+
+      .tick-flip {
+        font-family: !important; 
+      }
+
+      .tick-flip-panel-text-wrapper {
+        line-height: 1.4 !important; 
+      }
+
+      .tick-flip-panel {
+        background-color: #3c3e3c !important; 
+      }
+
+      .tick-flip {
+        border-radius:0.12em !important; 
+      }
+
+      /* Billboard */
     </style>
 
     
@@ -101,13 +167,54 @@
   <div class="container py-4">
     <header class="pb-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>ดีคิว.ไทย</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img">
+          <title>ดีคิว.ไทย</title>
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+            fill="currentColor"></path>
+        </svg>
         <span class="fs-4">ดีคิว.ไทย</span>
       </a>
     </header>
 
     <body>
+
+        <div class="tick" data-did-init="handleTickInit">
+          <div data-repeat="true" data-layout="horizontal fit" data-transform="upper -> split -> delay(random, 100, 150)">
+              <span data-view="flip" data-transform="ascii -> arrive -> round -> char(a-zA-Z)" class="tick-char"></span>
+          </div>
+        </div>
+
+    <script>
+          function handleTickInit(tick) {
       
+              // words to show on billboard
+              var rotation = [
+                  'Digital ',
+                  'Quotient',
+                  'THAILAND',
+                  'IE-TECH ',
+                  'KMITL   ',
+                  'Thesis  '
+              ];
+      
+              // current rotation index (we start at the first word)
+              var index = 0;
+      
+              // each 3 seconds we'll update the billboard
+              Tick.helper.interval(function(){
+      
+                  // get the word at the current index
+                  tick.value = rotation[index];
+      
+                  // when we reach the end we start over at zero
+                  index = index < rotation.length - 1 ? index + 1 : 0;
+      
+              }, 3000);
+      
+          }
+      </script>
+    
     <div class="container my-4">
       <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center bg-success rounded-3">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -169,14 +276,13 @@
       </div>
       <div class="col-md-6">
         <div class="h-100 p-5 bg-light rounded-3">
-          <h2>สถิติผู้เข้าใช้งาน</h2>
-          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+          <h2>สถิติผู้ใช้งาน</h2>
+          <p>งานวิจัยเรื่อง "การพัฒนาระบบสังเคราะห์ความสัมพันธ์ของปัจจัยที่ส่งผลต่อความฉลาดทางดิจิทัลด้วยเทคนิคเหมืองข้อมูล" </p>
           <button class="btn btn-outline-secondary" type="button">Example button</button>
         </div>
       </div>
     </div>
 
-  
   </body>
 
     <footer class="pt-3 mt-4 text-muted border-top">
