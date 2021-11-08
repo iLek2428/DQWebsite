@@ -1187,12 +1187,9 @@
             </div>
           </section>
 
-
               <hr class="my-4">
-              <button class="w-100 btn btn-primary btn-lg" type="submit">ส่งคำตอบ</button>
+              <button class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#DQresult" type="submit">ส่งคำตอบ</button>
 
-
-              <ul id="result" style="color: rgb(0, 0, 0);"></ul>
           </div>
         </div>
 
@@ -1231,6 +1228,33 @@
           </div>
         </div>
         <!-- Modal รูปแบบการเลี้ยงดู -->
+
+         <!-- Modal ผลลัพธ์ -->
+         <div class="modal fade" id="DQresult" tabindex="-1" aria-labelledby="DQresult" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="DQreadmoreLabel">ความฉลาดทางดิจิทัลของคุณคือ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <img src="https://via.placeholder.com/200" class="rounded mx-auto d-block" alt="DQ คืออะไร">
+
+                </br>
+                
+                <center>
+                <h1><ul id="result" style="color: rgb(0, 0, 0);"></ul></h1>
+                </center>
+              
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal ผลลัพธ์ -->
         </form>
 
         <script type="text/javascript" src="./assets/dist/js/answer-data.js"></script>
