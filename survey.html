@@ -1301,7 +1301,7 @@
                   const resultSelector = document.querySelector("#result");
                   if (resultList.length > 0) {
                     resultList.forEach((item) => {
-                      const resultHTML = JSON.stringify(item);
+                      const resultHTML = item.result
                       resultSelector.insertAdjacentHTML("beforeend", `<li>${resultHTML}</li>`);
                     });
                   } else {
