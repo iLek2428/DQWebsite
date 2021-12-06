@@ -64,6 +64,12 @@
       font-weight: 500;
     }
 
+    h3 {
+      font-family: 'Sarabun', sans-serif !important;
+      font-size: 20px;
+      line-height: 20pt
+    }
+
     .btn-outline-light {
       font-family: 'Sarabun', sans-serif !important;
       font-weight: 500;
@@ -1268,6 +1274,7 @@
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll(".needs-validation");
 
+
             // Loop over them and prevent submission
             Array.prototype.slice.call(forms).forEach(function (form) {
               form.addEventListener(
@@ -1303,13 +1310,14 @@
                   if (resultList.length > 0) {
                     resultList.forEach((item) => {
                       const resultHTML = item.result
-                      resultSelector.insertAdjacentHTML("beforeend", `<li>${resultHTML}</li>`);
+                      const descHTML = item.description
+                      resultSelector.insertAdjacentHTML("beforeend", `<li>${resultHTML}</li> </br> <h3>${descHTML}</h3>`);
                     });
                   } else {
                     resultSelector.insertAdjacentHTML("beforeend", "<li>ไม่มีคำตอบที่ตรงกัน</li>");
                   }
                 },
-                false
+                false               
               );
             });
           })();
