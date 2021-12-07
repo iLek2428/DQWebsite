@@ -1195,7 +1195,7 @@
           </section>
 
               <hr class="my-4">
-              <button class="w-100 btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#DQresult" type="submit">ส่งคำตอบ</button>
+              <button class="w-100 btn btn-primary btn-lg" type="submit">ส่งคำตอบ</button>
 
           </div>
         </div>
@@ -1261,9 +1261,9 @@
             </div>
           </div>
         </div>
-        <!-- Modal ผลลัพธ์ -->
+       
         </form>
-
+ <!-- Modal ผลลัพธ์ -->
         <script type="text/javascript" src="./assets/dist/js/answer-data.js"></script>
 
         <script>
@@ -1283,38 +1283,42 @@
                   event.preventDefault();
                   if (!form.checkValidity()) {
                     event.stopPropagation();
-                  }
-
-                  form.classList.add("was-validated");
-
-                  // เก็บคำตอบทั้งหมด
-                  let formElement = document.forms[0];
-                  let answerList = {};
-                  for (let index = 1; index <= 43; index++) {
-                    answerList[index] = Number(
-                      formElement[`question-${index}`].value
-                    );
-                  }
-
-                  // นำคำตอบไปเช็คกับชุดคำตอบที่เตรียมไว้
-                  const resultList = DATASET.filter((datasetItem) =>
-                    datasetItem.answer.every(
-                      (answerItem) =>
-                        answerItem.attr_value ===
-                        answerList[answerItem.attr_no]
-                    )
-                  );
-
-                  // นำผลลัพท์จากการแมตช์มาแสดง
-                  const resultSelector = document.querySelector("#result");
-                  if (resultList.length > 0) {
-                    resultList.forEach((item) => {
-                      const resultHTML = item.result
-                      const descHTML = item.description
-                      resultSelector.insertAdjacentHTML("beforeend", `<li>${resultHTML}</li> </br> <h3>${descHTML}</h3>`);
-                    });
+                    form.classList.add("was-validated");
+                    alert("กรุณากรอกข้อมูลให้ครบทุกช่อง")
                   } else {
-                    resultSelector.insertAdjacentHTML("beforeend", "<li>ไม่มีคำตอบที่ตรงกัน</li>");
+
+                    const DQresultModal = new bootstrap.Modal (document.getElementById('DQresult'), {});
+                    DQresultModal.show();
+
+                    // เก็บคำตอบทั้งหมด
+                    let formElement = document.forms[0];
+                    let answerList = {};
+                    for (let index = 1; index <= 43; index++) {
+                      answerList[index] = Number(
+                        formElement[`question-${index}`].value
+                      );
+                    }
+
+                    // นำคำตอบไปเช็คกับชุดคำตอบที่เตรียมไว้
+                    const resultList = DATASET.filter((datasetItem) =>
+                      datasetItem.answer.every(
+                        (answerItem) =>
+                          answerItem.attr_value ===
+                          answerList[answerItem.attr_no]
+                      )
+                    );
+
+                    // นำผลลัพท์จากการแมตช์มาแสดง
+                    const resultSelector = document.querySelector("#result");
+                    if (resultList.length > 0) {
+                      resultList.forEach((item) => {
+                        const resultHTML = item.result
+                        const descHTML = item.description
+                        resultSelector.insertAdjacentHTML("beforeend", `<li>${resultHTML}</li> </br> <h3>${descHTML}</h3>`);
+                      });
+                    } else {
+                      resultSelector.insertAdjacentHTML("beforeend", "<li>ไม่มีคำตอบที่ตรงกัน</li>");
+                    }
                   }
                 },
                 false               
