@@ -1237,6 +1237,33 @@
     </div>
     <!-- Modal รูปแบบการเลี้ยงดู -->
 
+
+    <!-- Modal กรอกข้อมูลไม่ครบ -->
+     <div class="modal fade" id="NotFullFill" tabindex="-1" aria-labelledby="DQNotFullFill" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="DQNotFullFill">แจ้งเตือน</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <img src="./assets/img/casual-life-3d-ghost-1.png" width="180" height="200" class="rounded mx-auto d-block" alt="คุณยังกรอกข้อมูลไม่ครบ">
+
+            </br>
+            <p>
+              <center><h1>ขออภัย! คุณยังกรอกข้อมูลไม่ครบ</h1></center>
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal กรอกข้อมูลไม่ครบ -->
+
     <!-- Modal ผลลัพธ์ -->
     <div class="modal fade" id="DQresult" tabindex="-1" aria-labelledby="DQresult" aria-hidden="true">
       <div class="modal-dialog modal-fullscreen">
@@ -1269,6 +1296,7 @@
 
     </form>
     <!-- Modal ผลลัพธ์ -->
+
     <script type="text/javascript" src="./assets/dist/js/answer-data.js"></script>
 
     <script>
@@ -1289,7 +1317,10 @@
               if (!form.checkValidity()) {
                 event.stopPropagation();
                 form.classList.add("was-validated");
-                alert("กรุณากรอกข้อมูลให้ครบทุกช่อง")
+                
+                const DQresultModal = new bootstrap.Modal(document.getElementById('NotFullFill'), {});
+                DQresultModal.show();
+
               } else {
 
                 const DQresultModal = new bootstrap.Modal(document.getElementById('DQresult'), {});
@@ -1342,19 +1373,16 @@
 
     <script>
       function onCloseDialog() {
-        window.location.href = "./index.html"
+        window.location.href = "./survey.html"
       }
     </script>
 
 </body>
 
 <footer class="pt-3 mt-4 text-muted border-top">
-  เว็บไซต์นี้เป็นส่วนหนึ่งของงานวิจัย
-  "การพัฒนาระบบสังเคราะห์ความสัมพันธ์ของปัจจัยที่ส่งผลต่อความฉลาดทางดิจิทัลด้วยเทคนิคเหมืองข้อมูล"
+  เว็บไซต์นี้เป็นส่วนหนึ่งของงานวิจัย "การพัฒนาระบบสังเคราะห์ความสัมพันธ์ของปัจจัยที่ส่งผลต่อความฉลาดทางดิจิทัลด้วยเทคนิคเหมืองข้อมูล"
 </footer>
 </div>
 </main>
-
-</body>
 
 </html>
