@@ -1194,7 +1194,6 @@
           </div>
         </section>
 
-        <hr class="my-4">
         <button class="w-100 btn btn-primary btn-lg" type="submit">ส่งคำตอบ</button>
         <footer class="pt-3 mt-4 text-muted border-top">
           เว็บไซต์นี้เป็นส่วนหนึ่งของงานวิจัย "การพัฒนาระบบสังเคราะห์ความสัมพันธ์ของปัจจัยที่ส่งผลต่อความฉลาดทางดิจิทัลด้วยเทคนิคเหมืองข้อมูล"
@@ -1278,9 +1277,7 @@
           </div>
           <div class="modal-body">
 
-            <img src="https://via.placeholder.com/200" class="rounded mx-auto d-block" alt="DQ คืออะไร">
-
-            </br>
+            <center><h1>ระดับความเสี่ยงของคุณคือ</h1></center>
 
             <center>
               <h1>
@@ -1353,7 +1350,7 @@
                   resultList.forEach((item) => {
                     const resultHTML = item.result
                     const descHTML = item.description
-                    resultSelector.insertAdjacentHTML("beforeend", `<li>${resultHTML}</li> </br> <h3>${descHTML}</h3>`);
+                    resultSelector.insertAdjacentHTML("beforeend", `<img src="${resultHTML}" style="width:50%">  </br> <h3>${descHTML}</h3>`);
                   });
                 } else {
                   resultSelector.insertAdjacentHTML("beforeend", "<li>ไม่มีคำตอบที่ตรงกัน</li>");
