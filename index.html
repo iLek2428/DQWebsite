@@ -215,7 +215,24 @@
       
           }
       </script>
-    
+
+      <script>
+        function onLoad(ok) {
+          if (ok) console.log("All charts loaded successfully");
+          else {
+            // Hide all elements that show charts
+            // ...
+          }
+        }
+      </script>
+
+
+      <script
+      async
+      data-chart-selectors="#chart"
+      src="https://scripts.simpleanalyticscdn.com/embed.js"
+      ></script>
+          
     <div class="container my-4">
       <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center bg-success rounded-3">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -278,8 +295,23 @@
       <div class="col-md-6">
         <div class="h-100 p-5 bg-light rounded-3">
           <h2>สถิติผู้ใช้งาน</h2>
-          <p>งานวิจัยเรื่อง "การพัฒนาระบบสังเคราะห์ความสัมพันธ์ของปัจจัยที่ส่งผลต่อความฉลาดทางดิจิทัลด้วยเทคนิคเหมืองข้อมูล" </p>
-          <button class="btn btn-outline-secondary" type="button">Example button</button>
+          
+          <p>
+          <div id="chart" 
+               data-hostname="simpleanalytics.com"
+               data-types="pageviews,visitors"
+               data-page-views-selector="#pageviews"
+               data-visitors-selector="#visitors"
+               style="aspect-ratio: 2/1"
+               data-timezone="Asia/Bangkok"
+               data-show-logo="false"
+               data-text-color="#198754"
+               data-page-views-color="#198754"
+               data-visitors-color="#034a29">
+            <p style="margin: 0">กำลังโหลดสถิติ...</p>
+          </div>
+          </p>
+
         </div>
       </div>
     </div>
